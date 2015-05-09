@@ -107,7 +107,112 @@
 <p>不放（放不下也属于），所能取得的价值就是Value（i-1， w）（即前i-1件物品放入重量限制为w的背包中）。</p>
 <p>Value（i， w）即i件物品放入重量限制为w的背包中的最大价值就等于上面两种情况中的最大值。</p>
 <hr>
-<p>这是一个动归理解的思想，我们在将它自底向上倒回去实现。<br>例如， 存在一个背包重量限制为10， 有5个物品重量价值分别为（5， 1）（2， 4）（3， 3）（4， 2）（5， 1），求最大价值。<br>此时我们用一个二位数组来记录对应的每一个value（i，w），从第一个物品开始放起，算出每一种情况下的最大价值，并逐步退出最终的解，即在重量限制10下，所能获得的最大价值。<br>|（i，w）|0|1|2|3|4|5|6|7|8|9|10|<br>|:-:|-|-|-|-|-|-|-|-|-|-|<br>|0|0|0|0|0|0|0|0|0|0|0|0<br>|1|0|0|0|0|0|1|1|1|1|1|1<br>|2|0|0|0|0|2|2|2|2|2|3|3<br>|3|0|0|0|3|3|3|3|5|5|5|5<br>|4|0|0|4|4|4|7|7|7|7|9|9<br>|5|0|5|5|9|9|9|12|12|12|12|14<br>类似于数字塔一样，我们可以从第一个物品开始装，并计算出各个情况下最大的价值，这样就可以依次计算二维数组中每一层的结果，最后输出[5，10]即在重量限制为10时放入第5个物品的最大价值。以这一题为例，结果就是v[5, 10] = 14。</p>
+<p>这是一个动归理解的思想，我们在将它自底向上倒回去实现。<br>例如， 存在一个背包重量限制为10， 有5个物品重量价值分别为（5， 1）（2， 4）（3， 3）（4， 2）（5， 1），求最大价值。<br>此时我们用一个二位数组来记录对应的每一个value（i，w），从第一个物品开始放起，算出每一种情况下的最大价值，并逐步退出最终的解，即在重量限制10下，所能获得的最大价值。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">（i，w）</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>7</td>
+<td>7</td>
+<td>7</td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>0</td>
+<td>5</td>
+<td>5</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<p>类似于数字塔一样，我们可以从第一个物品开始装，并计算出各个情况下最大的价值，这样就可以依次计算二维数组中每一层的结果，最后输出[5，10]即在重量限制为10时放入第5个物品的最大价值。以这一题为例，结果就是v[5, 10] = 14。</p>
 <p>例如：<a href="http://poj.org/problem?id=3624" target="_blank" rel="external"><em><code>poj 3624 Charm Bracelet</code></em></a></p>
 <blockquote>
 <p><code>Problem Description</code><br>Bessie has gone to the mall’s jewelry store and spies a charm bracelet. Of course, she’d like to fill it with the best charms possible from the N (1 ≤ N ≤ 3,402) available charms. Each charm i in the supplied list has a weight Wi (1 ≤ Wi ≤ 400), a ‘desirability’ factor Di (1 ≤ Di ≤ 100), and can be used at most once. Bessie can only support a charm bracelet whose weight is no more than M (1 ≤ M ≤ 12,880).</p>
