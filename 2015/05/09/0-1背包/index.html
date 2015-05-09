@@ -95,12 +95,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-1背包"><span class="toc-number">1.</span> <span class="toc-text">0-1背包</span></a></li></ol>
+			
 		
 		</div>
 		
-		<h1 id="0-1背包">0-1背包</h1><p>标签： ACM 算法 背包 动归 oj</p>
-<p>背包是一类典型的动归问题，有大神总结出来的背包九讲，0-1背包是其中的一种，也是最基本的一种。<br>之所以叫做 0-1背包是因为，这类问题中的每一件物体只有一件，放入背包与不放就构成了它的两种状态，0 代表不放，1 代表放入。</p>
+		<p>背包是一类典型的动归问题，有大神总结出来的背包九讲，0-1背包是其中的一种，也是最基本的一种。<br>之所以叫做 0-1背包是因为，这类问题中的每一件物体只有一件，放入背包与不放就构成了它的两种状态，0 代表不放，1 代表放入。</p>
 <p>将这类问题总结一下就是：<br>存在 N 件物品，每一见物品有两个属性，重量 w 和价值 v，有一个背包，具有重量限制wl， 求所能装入的最大价值。<br><a id="more"></a></p>
 <hr>
 <p><strong><code>Value（i， w） = Max（Value（i-1， w）, Value（i-1， w-w[i]）+v[i]）;</code></strong><br>解这道题的中点就在于，对于上面这个状态转移方程的理解。也就是把i个物品放入重量限制为W背包的中所取得的最大价值，取决于第i个物品的两种状态，即放与不放。</p>
@@ -192,7 +191,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-1背包"><span class="toc-number">1.</span> <span class="toc-text">0-1背包</span></a></li></ol>
+ 
  
   </div>
 
