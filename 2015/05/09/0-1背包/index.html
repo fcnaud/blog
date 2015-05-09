@@ -1,6 +1,6 @@
 
  <!DOCTYPE HTML>
-<html >
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
@@ -11,21 +11,15 @@
     
 
     
-    <meta name="description" content="0-1背包标签： ACM 算法 背包 动归 oj
-背包是一类典型的动归问题，有大神总结出来的背包九讲，0-1背包是其中的一种，也是最基本的一种。之所以叫做 0-1背包是因为，这类问题中的每一件物体只有一件，放入背包与不放就构成了它的两种状态，0 代表不放，1 代表放入。
-将这类问题总结一下就是：存在 N 件物品，每一见物品有两个属性，重量 w 和价值 v，有一个背包，具有重量限制wl， 求所能装入">
+    <meta name="description" content="对最简单的0-1背包进行了讨论，主要还是想试一下hexo。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="0-1背包">
 <meta property="og:url" content="http://yoursite.com/2015/05/09/0-1背包/index.html">
 <meta property="og:site_name" content="HELLO, DCF">
-<meta property="og:description" content="0-1背包标签： ACM 算法 背包 动归 oj
-背包是一类典型的动归问题，有大神总结出来的背包九讲，0-1背包是其中的一种，也是最基本的一种。之所以叫做 0-1背包是因为，这类问题中的每一件物体只有一件，放入背包与不放就构成了它的两种状态，0 代表不放，1 代表放入。
-将这类问题总结一下就是：存在 N 件物品，每一见物品有两个属性，重量 w 和价值 v，有一个背包，具有重量限制wl， 求所能装入">
+<meta property="og:description" content="对最简单的0-1背包进行了讨论，主要还是想试一下hexo。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="0-1背包">
-<meta name="twitter:description" content="0-1背包标签： ACM 算法 背包 动归 oj
-背包是一类典型的动归问题，有大神总结出来的背包九讲，0-1背包是其中的一种，也是最基本的一种。之所以叫做 0-1背包是因为，这类问题中的每一件物体只有一件，放入背包与不放就构成了它的两种状态，0 代表不放，1 代表放入。
-将这类问题总结一下就是：存在 N 件物品，每一见物品有两个属性，重量 w 和价值 v，有一个背包，具有重量限制wl， 求所能装入">
+<meta name="twitter:description" content="对最简单的0-1背包进行了讨论，主要还是想试一下hexo。">
 
     
     <link rel="alternative" href="/atom.xml" title="HELLO, DCF" type="application/atom+xml">
@@ -53,7 +47,7 @@
 				<h1 class="site-name"><a href="/" title="HELLO, DCF">HELLO, DCF</a></h1>
 				<h2 class="blog-motto">不忘初心， 方得始终</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -92,14 +86,14 @@
 		<a href="/about" title="dcf_xyz" target="_blank" itemprop="author">dcf_xyz</a>
 		
   <p class="article-time">
-    <time datetime="2015-05-09T06:03:22.000Z" itemprop="datePublished"> 發表於 2015-05-09</time>
+    <time datetime="2015-05-09T06:03:22.000Z" itemprop="datePublished"> 发表于 2015-05-09</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">文章目录</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-1背包"><span class="toc-number">1.</span> <span class="toc-text">0-1背包</span></a></li></ol>
 		
@@ -149,6 +143,11 @@
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/ACM/">ACM</a>
+</div>
+
 
   <div class="article-tags">
   
@@ -188,24 +187,35 @@
 	
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">文章目录</strong>
  
  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-1背包"><span class="toc-number">1.</span> <span class="toc-text">0-1背包</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/ACM/" title="ACM">ACM<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
 			
@@ -229,7 +239,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
@@ -251,7 +261,7 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
 </aside>
@@ -443,7 +453,7 @@ $(document).ready(function(){
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
