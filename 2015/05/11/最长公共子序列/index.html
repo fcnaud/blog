@@ -4,25 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>sizeof | HELLO, DCF</title>
+    <title>最长公共子序列 | HELLO, DCF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="dcf_xyz">
     
 
     
-    <meta name="description" content="当sizeof被用来计算类或结构体的时候，计算的是类或结构体中非静态变量所拥有的内存。例如，12string s;cout &amp;lt;&amp;lt; sizeof(s) &amp;lt;&amp;lt;endl; // 4
-由于c++中的string实现的时候，只有指向所保存数据的char是非静态的，所以计算所得的就只有4。(其实，串这一数据结构中，他的属性中还应该有一个长度，但是c++中的string在实现的时候，将长">
+    <meta name="description" content="定义子序列的定义：从给定序列中抽取一定量的元素，不改变其原先的顺序，满足这个条件的都称为给定序列的子序列。最长公共子序列：在给定的两个序列的所有相同子序列中，最长的那个子序列，通常不止为1。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sizeof">
-<meta property="og:url" content="http://yoursite.com/2015/05/10/sizeof/index.html">
+<meta property="og:title" content="最长公共子序列">
+<meta property="og:url" content="http://yoursite.com/2015/05/11/最长公共子序列/index.html">
 <meta property="og:site_name" content="HELLO, DCF">
-<meta property="og:description" content="当sizeof被用来计算类或结构体的时候，计算的是类或结构体中非静态变量所拥有的内存。例如，12string s;cout &amp;lt;&amp;lt; sizeof(s) &amp;lt;&amp;lt;endl; // 4
-由于c++中的string实现的时候，只有指向所保存数据的char是非静态的，所以计算所得的就只有4。(其实，串这一数据结构中，他的属性中还应该有一个长度，但是c++中的string在实现的时候，将长">
+<meta property="og:description" content="定义子序列的定义：从给定序列中抽取一定量的元素，不改变其原先的顺序，满足这个条件的都称为给定序列的子序列。最长公共子序列：在给定的两个序列的所有相同子序列中，最长的那个子序列，通常不止为1。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sizeof">
-<meta name="twitter:description" content="当sizeof被用来计算类或结构体的时候，计算的是类或结构体中非静态变量所拥有的内存。例如，12string s;cout &amp;lt;&amp;lt; sizeof(s) &amp;lt;&amp;lt;endl; // 4
-由于c++中的string实现的时候，只有指向所保存数据的char是非静态的，所以计算所得的就只有4。(其实，串这一数据结构中，他的属性中还应该有一个长度，但是c++中的string在实现的时候，将长">
+<meta name="twitter:title" content="最长公共子序列">
+<meta name="twitter:description" content="定义子序列的定义：从给定序列中抽取一定量的元素，不改变其原先的顺序，满足这个条件的都称为给定序列的子序列。最长公共子序列：在给定的两个序列的所有相同子序列中，最长的那个子序列，通常不止为1。">
 
     
     <link rel="alternative" href="/atom.xml" title="HELLO, DCF" type="application/atom+xml">
@@ -82,14 +79,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/05/10/sizeof/" title="sizeof" itemprop="url">sizeof</a>
+      <a href="/2015/05/11/最长公共子序列/" title="最长公共子序列" itemprop="url">最长公共子序列</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="dcf_xyz" target="_blank" itemprop="author">dcf_xyz</a>
 		
   <p class="article-time">
-    <time datetime="2015-05-09T17:29:06.000Z" itemprop="datePublished"> 发表于 2015-05-10</time>
+    <time datetime="2015-05-11T06:24:33.000Z" itemprop="datePublished"> 发表于 2015-05-11</time>
     
   </p>
 </header>
@@ -98,12 +95,16 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解法"><span class="toc-number">2.</span> <span class="toc-text">解法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-number">3.</span> <span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题"><span class="toc-number">4.</span> <span class="toc-text">例题</span></a></li></ol>
 		
 		</div>
 		
-		<p>当sizeof被用来计算类或结构体的时候，计算的是类或结构体中非静态变量所拥有的内存。<br>例如，<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span>(s) &lt;&lt;endl; <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></p>
-<p>由于c++中的string实现的时候，只有指向所保存数据的char<em>是非静态的，所以计算所得的就只有4。(其实，串这一数据结构中，他的属性中还应该有一个长度，但是c++中的string在实现的时候，将长度放在了char</em> 所指向的区域中的前4个字节中了)。</p>
+		<h3 id="定义">定义</h3><p><code>子序列的定义</code>：从给定序列中抽取一定量的元素，不改变其原先的顺序，满足这个条件的都称为给定序列的子序列。<br><code>最长公共子序列</code>：在给定的两个序列的所有相同子序列中，最长的那个子序列，通常不止为1。</p>
+<a id="more"></a>
+<h3 id="解法">解法</h3><p>最长公共子序列，是一个典型的动归题目。<br>假设从在两个序列A {A1,A2,A3,A4……Ai}， B {B1,B2,B3,B4……Bj},用l[i][j] 来表示长度为i的序列A和长度为j的序列B所拥有的最长公共子序列的长度，那么</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="atom">if</span> <span class="name">Ai</span> == <span class="name">Bj</span> <span class="atom">then</span></span><br><span class="line">    <span class="atom">l</span>[<span class="atom">i</span>][<span class="atom">j</span>] = <span class="atom">l</span>[<span class="atom">i</span>-<span class="number">1</span>][<span class="atom">j</span>-<span class="number">1</span>] + <span class="number">1</span></span><br><span class="line"><span class="atom">else</span></span><br><span class="line">    <span class="atom">l</span>[<span class="atom">i</span>][<span class="atom">j</span>] = <span class="atom">max</span>(<span class="atom">l</span>[<span class="atom">i</span>][<span class="atom">j</span>-<span class="number">1</span>], <span class="atom">l</span>[<span class="atom">i</span>-<span class="number">1</span>][<span class="atom">j</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="实现">实现</h3><p>待填……</p>
+<h3 id="例题">例题</h3><p>待填……</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -111,13 +112,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/编程随笔/">编程随笔</a>
+  <a class="article-category-link" href="/categories/ACM/">ACM</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/c库函数/">c库函数</a><a href="/tags/编程语言/">编程语言</a><a href="/tags/随笔/">随笔</a>
+  <span></span> <a href="/tags/ACM/">ACM</a><a href="/tags/动归/">动归</a><a href="/tags/算法/">算法</a>
   </div>
 
 </div>
@@ -126,7 +127,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/05/10/sizeof/" data-title="sizeof | HELLO, DCF" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/05/11/最长公共子序列/" data-title="最长公共子序列 | HELLO, DCF" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -139,19 +140,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/05/11/最长公共子序列/" title="最长公共子序列">
-  <strong>上一篇：</strong><br/>
-  <span>
-  最长公共子序列</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/05/09/0-1背包/"  title="0-1背包">
+<a href="/2015/05/10/sizeof/"  title="sizeof">
  <strong>下一篇：</strong><br/> 
- <span>0-1背包
+ <span>sizeof
 </span>
 </a>
 </div>
@@ -166,7 +159,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解法"><span class="toc-number">2.</span> <span class="toc-text">解法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-number">3.</span> <span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例题"><span class="toc-number">4.</span> <span class="toc-text">例题</span></a></li></ol>
  
   </div>
 
