@@ -4,34 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>test | HELLO, DCF</title>
+    <title>memset函数 | HELLO, DCF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="dcf_xyz">
     
 
     
-    <meta name="description" content="标签（空格分隔）： 未分类
-
-
-1st=&amp;#62;start&amp;#10;e=&amp;#62;end:&amp;#62;http:www.baidu.com&amp;#10;cond1=&amp;#62;condition: condtion &amp;#10;io=&amp;#62;inputoutput&amp;#10;&amp;#10;st-&amp;#62;cond1(yes)-&amp;#62;e&amp;#10;cond1(no)-&amp;#62;io-&amp;#62;e
-在此输入正文">
+    <meta name="description" content="memset函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2015/05/10/test/index.html">
+<meta property="og:title" content="memset函数">
+<meta property="og:url" content="http://yoursite.com/2015/05/20/memset函数/index.html">
 <meta property="og:site_name" content="HELLO, DCF">
-<meta property="og:description" content="标签（空格分隔）： 未分类
-
-
-1st=&amp;#62;start&amp;#10;e=&amp;#62;end:&amp;#62;http:www.baidu.com&amp;#10;cond1=&amp;#62;condition: condtion &amp;#10;io=&amp;#62;inputoutput&amp;#10;&amp;#10;st-&amp;#62;cond1(yes)-&amp;#62;e&amp;#10;cond1(no)-&amp;#62;io-&amp;#62;e
-在此输入正文">
+<meta property="og:description" content="memset函数">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="标签（空格分隔）： 未分类
-
-
-1st=&amp;#62;start&amp;#10;e=&amp;#62;end:&amp;#62;http:www.baidu.com&amp;#10;cond1=&amp;#62;condition: condtion &amp;#10;io=&amp;#62;inputoutput&amp;#10;&amp;#10;st-&amp;#62;cond1(yes)-&amp;#62;e&amp;#10;cond1(no)-&amp;#62;io-&amp;#62;e
-在此输入正文">
+<meta name="twitter:title" content="memset函数">
+<meta name="twitter:description" content="memset函数">
 
     
     <link rel="alternative" href="/atom.xml" title="HELLO, DCF" type="application/atom+xml">
@@ -91,14 +79,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/05/10/test/" title="test" itemprop="url">test</a>
+      <a href="/2015/05/20/memset函数/" title="memset函数" itemprop="url">memset函数</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="dcf_xyz" target="_blank" itemprop="author">dcf_xyz</a>
 		
   <p class="article-time">
-    <time datetime="2015-05-09T17:29:06.000Z" itemprop="datePublished"> 发表于 2015-05-10</time>
+    <time datetime="2015-05-20T14:23:55.000Z" itemprop="datePublished"> 发表于 2015-05-20</time>
     
   </p>
 </header>
@@ -111,11 +99,28 @@
 		
 		</div>
 		
-		<p>标签（空格分隔）： 未分类</p>
-<p><a href="www.baidu.com"><i class="icon-renren icon-5x"></i></a></p>
-<p><i class="icon-weibo icon-2x"></i></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">st=&#62;start&#10;e=&#62;end:&#62;http:www.baidu.com&#10;cond1=&#62;condition: condtion &#10;io=&#62;inputoutput&#10;&#10;st-&#62;cond1(yes)-&#62;e&#10;cond1(no)-&#62;io-&#62;e</span><br></pre></td></tr></table></figure>
-<p>在此输入正文</p>
+		<p>memset是库函数，被用来格式化数组。<br>memset的函数原型：<br><code>void* memset(void * buf, int ch, size_t count);</code></p>
+<blockquote>
+<ul>
+<li>第一个参数：需要格式化的区间的首地址</li>
+<li>第二个参数：用来填充的元素</li>
+<li>第三个参数：需要填充的字节数</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<p>memeset是按照字节来进行填充的，也就是将所在区间的每一个字节用第二个参数对应的ascii码值进行替换。一个字节一个字节地格式化，所以能方便地将数组格式化为0，-1，true， false。</p>
+<p>刚开始不了解的话，很容易理解为填充为固定的值，比如<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> <span class="built_in">array</span>[<span class="number">100</span>];</span><br><span class="line"><span class="built_in">memset</span>(<span class="built_in">array</span>, <span class="number">1</span>, <span class="keyword">sizeof</span>(<span class="built_in">array</span>));</span><br></pre></td></tr></table></figure></p>
+<p>这样的话其实不会的到想要的结果，由于他是将其格式化为第二个参数所对应的ascii码值，所以对应的每一个数字就变成了<code>0X01010101</code>也就是<code>16843009</code>。</p>
+<p>它能被用来将数组格式化为true和false，是由于true和false是本身就是一个字节；<br>用0来填充是因为0就是<code>00000000</code>，所以你怎么读都是0；而能够用来填充为-1，则是由于-1在计算机内的存储是按照补码来存储的-1，也就是<code>11111111</code>所以也是没有问题的。</p>
+<p>在c++中还有了一个用来格式化一个区间的函数，即<code>algorithm</code>中的<code>fill_n</code><br>fill_n的函数原型：<br><code>iterator fill_n(iterator start, size_t n, const TYPE&amp; val);</code></p>
+<blockquote>
+<ul>
+<li>第一个参数：待格式化区间首元素迭代器</li>
+<li>第二个参数：需要填充的元素个数</li>
+<li>第三个参数：用来填充的元素</li>
+</ul>
+</blockquote>
+<p>在用来格式化容器的同时，也可以用来格式化数组。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -123,13 +128,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/test/">test</a>
+  <a class="article-category-link" href="/categories/库函数/">库函数</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/teste/">teste</a>
+  <span></span> <a href="/tags/编程随笔/">编程随笔</a>
   </div>
 
 </div>
@@ -138,7 +143,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/05/10/test/" data-title="test | HELLO, DCF" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/05/20/memset函数/" data-title="memset函数 | HELLO, DCF" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -151,19 +156,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/05/11/最长公共子序列/" title="最长公共子序列">
-  <strong>上一篇：</strong><br/>
-  <span>
-  最长公共子序列</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/05/10/sizeof/"  title="sizeof">
+<a href="/2015/05/18/拓扑排序/"  title="拓扑排序">
  <strong>下一篇：</strong><br/> 
- <span>sizeof
+ <span>拓扑排序
 </span>
 </a>
 </div>
@@ -172,7 +169,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/05/10/test/" data-title="test" data-url="http://yoursite.com/2015/05/10/test/"></div>
+	<div class="ds-thread" data-thread-key="2015/05/20/memset函数/" data-title="memset函数" data-url="http://yoursite.com/2015/05/20/memset函数/"></div>
 </section>
 
 
@@ -200,7 +197,9 @@
 		  
 		
 		  
-			<li><a href="/categories/test/" title="test">test<sup>1</sup></a></li>
+		
+		  
+			<li><a href="/categories/库函数/" title="库函数">库函数<sup>1</sup></a></li>
 		  
 		
 		  
@@ -215,7 +214,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/ACM/" style="font-size: 20px;">ACM</a><a href="/tags/c库函数/" style="font-size: 10px;">c库函数</a><a href="/tags/oj/" style="font-size: 10px;">oj</a><a href="/tags/teste/" style="font-size: 10px;">teste</a><a href="/tags/动归/" style="font-size: 20px;">动归</a><a href="/tags/哈夫曼树/" style="font-size: 10px;">哈夫曼树</a><a href="/tags/图/" style="font-size: 10px;">图</a><a href="/tags/并查集/" style="font-size: 10px;">并查集</a><a href="/tags/拓扑排序/" style="font-size: 10px;">拓扑排序</a><a href="/tags/算法/" style="font-size: 20px;">算法</a><a href="/tags/算法学习/" style="font-size: 10px;">算法学习</a><a href="/tags/编程语言/" style="font-size: 10px;">编程语言</a><a href="/tags/贪心/" style="font-size: 10px;">贪心</a><a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+       <a href="/tags/ACM/" style="font-size: 20px;">ACM</a><a href="/tags/c库函数/" style="font-size: 10px;">c库函数</a><a href="/tags/oj/" style="font-size: 10px;">oj</a><a href="/tags/动归/" style="font-size: 20px;">动归</a><a href="/tags/哈夫曼树/" style="font-size: 10px;">哈夫曼树</a><a href="/tags/图/" style="font-size: 10px;">图</a><a href="/tags/并查集/" style="font-size: 10px;">并查集</a><a href="/tags/拓扑排序/" style="font-size: 10px;">拓扑排序</a><a href="/tags/算法/" style="font-size: 20px;">算法</a><a href="/tags/算法学习/" style="font-size: 10px;">算法学习</a><a href="/tags/编程语言/" style="font-size: 10px;">编程语言</a><a href="/tags/编程随笔/" style="font-size: 10px;">编程随笔</a><a href="/tags/贪心/" style="font-size: 10px;">贪心</a><a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     </div>
   </div>
 
