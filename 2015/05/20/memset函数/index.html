@@ -108,12 +108,11 @@
 <li>第三个参数：需要填充的字节数</li>
 </ul>
 </blockquote>
-<a id="more"></a>
-<p>memeset是按照字节来进行填充的，也就是将所在区间的每一个字节用第二个参数对应的ascii码值进行替换。一个字节一个字节地格式化，所以能方便地将数组格式化为0，-1，true， false。</p>
+<p>作用：将第二个元素中传入的数据，转化成unsigned char，然后从第一个参数传入的地址开始，将第三个参数传入的数量个字节填充为转化后的数据。<br><a id="more"></a><br>memeset是按照字节来进行填充的，一个字节一个字节地格式化，所以能方便地将数组格式化为0，-1，true， false。</p>
 <p>刚开始不了解的话，很容易理解为填充为固定的值，比如</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> <span class="built_in">array</span>[<span class="number">100</span>];</span><br><span class="line"><span class="built_in">memset</span>(<span class="built_in">array</span>, <span class="number">1</span>, <span class="keyword">sizeof</span>(<span class="built_in">array</span>));</span><br></pre></td></tr></table></figure>
 <p>这样的话其实不会的到想要的结果，由于他是将其格式化为第二个参数所对应的ascii码值，所以对应的每一个数字就变成了<code>0X01010101</code>也就是<code>16843009</code>。</p>
-<p>它能被用来将数组格式化为true和false，是由于true和false是本身就是一个字节；用0来填充是因为0就是<code>00000000</code>，所以你怎么读都是0；而能够用来填充为-1，则是由于-1在计算机内的存储是按照补码来存储的-1，也就是<code>11111111</code>所以也是没有问题的。</p>
+<p>它能被用来将数组格式化为true和false，是由于true和false是本身就是一个字节；用0来填充是因为0就是<code>00000000</code>，所以你怎么读都是0；而能够用来填充为-1，则是由于它的第二个参数是unsigned int，-1产生了溢出，-1被转换为<code>255</code>，正数的补码是他本身，也就是<code>11111111</code>，而<code>0xffffffff</code>恰好是-1的补码，所以也是没有问题的。</p>
 <p>在c++中还有了一个用来格式化一个区间的函数，即<code>algorithm</code>中的<code>fill_n</code></p>
 <p>fill_n的函数原型：<br><code>iterator fill_n(iterator start, size_t n, const TYPE&amp; val);</code></p>
 <blockquote>
