@@ -1192,6 +1192,28 @@ a {
 #article-nav #article-nav-older {
   float: right;
 }
+.toc-article {
+  background: #eee;
+  margin: 2em 0 0 0.5em;
+  padding: 1em;
+}
+.toc-article strong {
+  padding: 0.3em 0;
+}
+#toc {
+  line-height: 1.5em;
+  font-size: 1em;
+  float: right;
+}
+#toc .toc {
+  padding: 0;
+}
+#toc .toc li {
+  list-style-type: none;
+}
+#toc .toc-child {
+  padding-left: 0.7em;
+}
 @-moz-keyframes cd-bounce-1 {
   0% {
     opacity: 0;
