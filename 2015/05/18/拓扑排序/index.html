@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+
   
   <title>拓扑排序 | HELLO, DCF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,7 +26,11 @@
 <body>
   <div id="container">
     <div class="left-col">
-    <div class="overlay"></div>
+    <div class="overlay">
+
+<script type="text/javascript" src="//rc.revolvermaps.com/0/0/0.js?i=2rmx835xcbn&amp;d=2&amp;p=0&amp;b=0&amp;w=293&amp;g=1&amp;f=arial&amp;fs=12&amp;r=0&amp;c0=ffffff&amp;c1=007eff&amp;c2=ffffff&amp;ic0=0&amp;ic1=0" async="async"></script>
+
+</div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -105,7 +110,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ACM/" style="font-size: 20px;">ACM</a><a href="/tags/动归/" style="font-size: 10px;">动归</a><a href="/tags/动规/" style="font-size: 10px;">动规</a><a href="/tags/图论/" style="font-size: 10px;">图论</a><a href="/tags/库函数/" style="font-size: 10px;">库函数</a><a href="/tags/拓扑排序/" style="font-size: 10px;">拓扑排序</a><a href="/tags/编程随笔/" style="font-size: 10px;">编程随笔</a><a href="/tags/背包/" style="font-size: 10px;">背包</a>
+						<a href="/tags/ACM/" style="font-size: 20px;">ACM</a><a href="/tags/动规/" style="font-size: 10px;">动规</a><a href="/tags/图论/" style="font-size: 10px;">图论</a><a href="/tags/库函数/" style="font-size: 10px;">库函数</a><a href="/tags/拓扑排序/" style="font-size: 10px;">拓扑排序</a><a href="/tags/算法/" style="font-size: 10px;">算法</a><a href="/tags/编程随笔/" style="font-size: 10px;">编程随笔</a><a href="/tags/背包/" style="font-size: 10px;">背包</a><a href="/tags/解题报告/" style="font-size: 15px;">解题报告</a>
 					</div>
 				</section>
 				
@@ -121,8 +126,9 @@
 				
 			</div>
 		</div>
-	</header>				
+	</header>		
 </div>
+
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
@@ -173,10 +179,12 @@
 </a>
     </div>
   
+
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
     
+
     
       <header class="article-header">
         
@@ -200,11 +208,14 @@
 	</div>
 
 
+
         <div class="clearfix"></div>
       </div>
       
     
     <div class="article-entry" itemprop="articleBody">
+
+
       
            
            <div id="toc" class="toc-article">
@@ -233,7 +244,7 @@
 <h2 id="基本思路">基本思路</h2><blockquote>
 <p>出现环路即当前节点的下一个为自己的上游节点，我们在dfs的框架下，每访问一个节点，就将其设为正在访问，直到访问结束，设为已经访问。<br>在整个访问过程中，一旦要访问的节点处于正在访问的状态，就说明已经产生环路，报错退出。</p>
 </blockquote>
-<h2 id="代码实现">代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//图的存储</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; v(<span class="number">110</span>); </span><br><span class="line"><span class="comment">//记录每个节点的状态， -1， 0， 1对应正在访问，未访问，已访问</span></span><br><span class="line"><span class="keyword">int</span> sta[<span class="number">101</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//要想打印拓扑序列，可用一个栈来保存过程</span></span><br><span class="line"><span class="comment">//stack&lt;int&gt; topo;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//深搜</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> root)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">//设置当前节点为正在访问</span></span><br><span class="line">    sta[root] = -<span class="number">1</span>;</span><br><span class="line">    <span class="comment">//遍历当前节点的临接点</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> ver:v[root])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//要被访问的节点正在访问，说明存在环路</span></span><br><span class="line">        <span class="comment">//已被访问，不做处理</span></span><br><span class="line">        <span class="keyword">if</span>(sta[ver]==-<span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>; </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(sta[ver]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//访问，若出错便退出</span></span><br><span class="line">            <span class="keyword">if</span>(!dfs(ver)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//未退出，当前节点设为已访问</span></span><br><span class="line">    sta[root] = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//将当前节点压栈</span></span><br><span class="line">    <span class="comment">//topo.push(root);</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">toposort</span><span class="params">(<span class="keyword">int</span> n)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    <span class="built_in">memset</span>(sta, <span class="number">0</span>, <span class="keyword">sizeof</span>(sta)); </span><br><span class="line">    <span class="comment">//深搜框架</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//若当前节点已被访问，不做处理</span></span><br><span class="line">        <span class="keyword">if</span>(sta[i]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!dfs(i)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码实现">代码实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//图的存储</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; v(<span class="number">110</span>); </span><br><span class="line"><span class="comment">//记录每个节点的状态， -1， 0， 1对应正在访问，未访问，已访问</span></span><br><span class="line"><span class="keyword">int</span> sta[<span class="number">101</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//要想打印拓扑序列，可用一个栈来保存过程</span></span><br><span class="line"><span class="comment">//stack&lt;int&gt; topo;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//深搜</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> root)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">//设置当前节点为正在访问</span></span><br><span class="line">    sta[root] = -<span class="number">1</span>;</span><br><span class="line">    <span class="comment">//遍历当前节点的临接点</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> ver:v[root])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//要被访问的节点正在访问，说明存在环路</span></span><br><span class="line">        <span class="comment">//已被访问，不做处理</span></span><br><span class="line">        <span class="keyword">if</span>(sta[ver]==-<span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>; </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(sta[ver]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//访问，若出错便退出</span></span><br><span class="line">            <span class="keyword">if</span>(!dfs(ver)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//未退出，当前节点设为已访问</span></span><br><span class="line">    sta[root] = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//将当前节点压栈</span></span><br><span class="line">    <span class="comment">//topo.push(root);</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">toposort</span><span class="params">(<span class="keyword">int</span> n)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    <span class="built_in">memset</span>(sta, <span class="number">0</span>, <span class="keyword">sizeof</span>(sta)); </span><br><span class="line">    <span class="comment">//深搜框架</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//若当前节点已被访问，不做处理</span></span><br><span class="line">        <span class="keyword">if</span>(sta[i]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!dfs(i)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="例题">例题</h2><p>待填……</p>
 
       
@@ -300,6 +311,9 @@
 	</script>
 	<!-- 多说公共JS代码 end -->
 </div>
+
+
+
 
 
 
