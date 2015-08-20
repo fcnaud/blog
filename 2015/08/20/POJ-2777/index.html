@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>POJ-2777 | HELLO, DCF</title>
+  <title>POJ-2777 （线段树 区间更新） | HELLO, DCF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="POJ2777解题报告">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ-2777">
+<meta property="og:title" content="POJ-2777 （线段树 区间更新）">
 <meta property="og:url" content="http://yoursite.com/2015/08/20/POJ-2777/index.html">
 <meta property="og:site_name" content="HELLO, DCF">
 <meta property="og:description" content="POJ2777解题报告">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POJ-2777">
+<meta name="twitter:title" content="POJ-2777 （线段树 区间更新）">
 <meta name="twitter:description" content="POJ2777解题报告">
   
     <link rel="alternative" href="/atom.xml" title="HELLO, DCF" type="application/atom+xml">
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      POJ-2777
+      POJ-2777 （线段树 区间更新）
     </h1>
   
 
@@ -235,7 +235,7 @@ var _hmt = _hmt || [];
   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
   </div>
 
-        <p><a href="http://poj.org/problem?id=2777" target="_blank" rel="external"><code>POJ2777 - Count Color</code></a></p>
+        <p><a href="http://poj.org/problem?id=2777" target="_blank" rel="external"><code>题目链接：POJ2777 - Count Color</code></a></p>
 <h2 id="解题思路">解题思路</h2><p>这道题看上去是一道普通的区间更新问题，但入手还是挺多坑的。</p>
 <p>因为所要查询的是给定区间内不同颜色的个数，这就需要在每一层节点都要保存该区间的涂色情况，如果仅仅记录个数，是无法在较上一层进行汇总的，如果在每一个节点都用数组进行存储，那么对空间和运算时间都是很消耗的。</p>
 <p>所幸颜色种类比较少，所以我们可以像函数中的标志参数那样，用不同位上的 1 来表示不同的颜色，（即 1 表示 1，10 表示 2，100 表示 3，1000 表示 4……）将两个数按位或起来，就可以将信息进行汇总，30 种颜色，用 int 就可以存下来。<br><a id="more"></a><br>其他的类似于基本的区间更新操作。需要注意的是涂色是覆盖问题，操作有先后 <strong>顺序</strong> 。当更新当前区间时也需要将信息更新到下一层，不然操作可能进行覆盖。 </p>
@@ -252,7 +252,7 @@ var _hmt = _hmt || [];
   
   
     <a href="/2015/08/19/POJ-3468/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">POJ-3468</div>
+      <div class="article-nav-title">POJ-3468 （线段树 区间更新）</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -281,7 +281,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="POJ-2777" data-title="POJ-2777" data-url="http://yoursite.com/2015/08/20/POJ-2777/"></div>
+	<div class="ds-thread" data-thread-key="POJ-2777" data-title="POJ-2777 （线段树 区间更新）" data-url="http://yoursite.com/2015/08/20/POJ-2777/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

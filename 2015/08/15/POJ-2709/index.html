@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>POJ-2709 | HELLO, DCF</title>
+  <title>POJ-2709 （贪心） | HELLO, DCF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="poj-2709解题报告">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ-2709">
+<meta property="og:title" content="POJ-2709 （贪心）">
 <meta property="og:url" content="http://yoursite.com/2015/08/15/POJ-2709/index.html">
 <meta property="og:site_name" content="HELLO, DCF">
 <meta property="og:description" content="poj-2709解题报告">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POJ-2709">
+<meta name="twitter:title" content="POJ-2709 （贪心）">
 <meta name="twitter:description" content="poj-2709解题报告">
   
     <link rel="alternative" href="/atom.xml" title="HELLO, DCF" type="application/atom+xml">
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      POJ-2709
+      POJ-2709 （贪心）
     </h1>
   
 
@@ -235,7 +235,7 @@ var _hmt = _hmt || [];
   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
   </div>
 
-        <p><a href="http://poj.org/problem?id=2709" target="_blank" rel="external"><code>poj2709 - Painter</code></a></p>
+        <p><a href="http://poj.org/problem?id=2709" target="_blank" rel="external"><code>题目链接：poj2709 - Painter</code></a></p>
 <h2 id="思路">思路</h2><p>由于需要尽可能少的购买套餐，所以就要避免浪费。每种颜色的数量是不同的，为了避免某一种颜色剩余的过多，也就是有一些颜色会过早被用光，所以在每次取颜料来配置灰色时（利用 <strong>贪心</strong> 的思想），都要在剩余量最多的几种颜料中来取。</p>
 <a id="more"></a>
 <p>要每次都达到最优（也就是在剩余量最多中来取），所以每次的取量，不能过大。过大会导致不能达到最优，每次的进量只能为1。<br>具体实现也就是根据最大需求的颜料，进行第一次购买，并计算出每种颜料的剩余量。然后每次将最大的三种分别减一，灰色减一，再次排序。当不够配置时，也就是第三多的颜料用光是购进一次，直到灰色配置完成。</p>
@@ -253,14 +253,14 @@ var _hmt = _hmt || [];
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          POJ-2479
+          POJ-2479 （最大连续子列和 动规）
         
       </div>
     </a>
   
   
     <a href="/2015/08/15/POJ-3264/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">POJ-3264</div>
+      <div class="article-nav-title">POJ-3264 （线段树 基本操作）</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -289,7 +289,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="POJ-2709" data-title="POJ-2709" data-url="http://yoursite.com/2015/08/15/POJ-2709/"></div>
+	<div class="ds-thread" data-thread-key="POJ-2709" data-title="POJ-2709 （贪心）" data-url="http://yoursite.com/2015/08/15/POJ-2709/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

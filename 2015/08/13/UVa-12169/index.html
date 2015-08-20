@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>UVa-12169 | HELLO, DCF</title>
+  <title>UVa-12169 （数论） | HELLO, DCF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="UVa刷题之旅">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UVa-12169">
+<meta property="og:title" content="UVa-12169 （数论）">
 <meta property="og:url" content="http://yoursite.com/2015/08/13/UVa-12169/index.html">
 <meta property="og:site_name" content="HELLO, DCF">
 <meta property="og:description" content="UVa刷题之旅">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UVa-12169">
+<meta name="twitter:title" content="UVa-12169 （数论）">
 <meta name="twitter:description" content="UVa刷题之旅">
   
     <link rel="alternative" href="/atom.xml" title="HELLO, DCF" type="application/atom+xml">
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      UVa-12169
+      UVa-12169 （数论）
     </h1>
   
 
@@ -235,7 +235,7 @@ var _hmt = _hmt || [];
   <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#解题思路"><span class="toc-number">1.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用扩展欧几里得求解"><span class="toc-number"></span> <span class="toc-text">利用扩展欧几里得求解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number"></span> <span class="toc-text">代码</span></a>
   </div>
 
-        <p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=850&amp;page=show_problem&amp;problem=3321" target="_blank" rel="external"><code>12169 - Disgruntled Judge</code></a></p>
+        <p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=850&amp;page=show_problem&amp;problem=3321" target="_blank" rel="external"><code>题目链接：12169 - Disgruntled Judge</code></a></p>
 <h3 id="解题思路">解题思路</h3><p>因为递推公式对10001取模，所以 a，b 的取值范围就可以缩小到 [0，10000]， 最简单的就是直接对 a，b 进行枚举，满足条件就作为正确答案。</p>
 <a id="more"></a>
 <h3 id="代码">代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">10001</span>;</span><br><span class="line"><span class="keyword">int</span> t, x[<span class="number">210</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> a=<span class="number">0</span>; a&lt;=<span class="number">10000</span>; a++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> b=<span class="number">0</span>; b&lt;=<span class="number">10000</span>; b++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">bool</span> flag = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=<span class="number">2</span>*t; i+=<span class="number">2</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                x[i] = (a*x[i-<span class="number">1</span>] + b) % mod;</span><br><span class="line">                <span class="keyword">if</span>(i+<span class="number">1</span>&lt;=<span class="number">2</span>*t&amp;&amp;x[i+<span class="number">1</span>]!=((a*x[i]+b)%mod))</span><br><span class="line">                &#123;</span><br><span class="line">                    flag = <span class="keyword">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(flag) <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;t)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=<span class="number">2</span>*t; i+=<span class="number">2</span>) <span class="built_in">cin</span>&gt;&gt;x[i];</span><br><span class="line">        solve();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=<span class="number">2</span>*t; i+=<span class="number">2</span>) <span class="built_in">cout</span>&lt;&lt;x[i]&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -255,7 +255,7 @@ var _hmt = _hmt || [];
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          UVa-11582
+          UVa-11582 （数论）
         
       </div>
     </a>
@@ -291,7 +291,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="UVa-12169" data-title="UVa-12169" data-url="http://yoursite.com/2015/08/13/UVa-12169/"></div>
+	<div class="ds-thread" data-thread-key="UVa-12169" data-title="UVa-12169 （数论）" data-url="http://yoursite.com/2015/08/13/UVa-12169/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
