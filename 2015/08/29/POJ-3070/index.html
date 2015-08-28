@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>UVa-11582 （数论） | HELLO, DCF</title>
+  <title>POJ-3070 （矩阵快速幂） | HELLO, DCF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="UVa刷题之旅 UVa-11582 （数论）">
+  <meta name="description" content="POJ 3070 解题报告 矩阵快速幂">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UVa-11582 （数论）">
-<meta property="og:url" content="http://yoursite.com/2015/08/13/UVa-11582/index.html">
+<meta property="og:title" content="POJ-3070 （矩阵快速幂）">
+<meta property="og:url" content="http://yoursite.com/2015/08/29/POJ-3070/index.html">
 <meta property="og:site_name" content="HELLO, DCF">
-<meta property="og:description" content="UVa刷题之旅 UVa-11582 （数论）">
+<meta property="og:description" content="POJ 3070 解题报告 矩阵快速幂">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UVa-11582 （数论）">
-<meta name="twitter:description" content="UVa刷题之旅 UVa-11582 （数论）">
+<meta name="twitter:title" content="POJ-3070 （矩阵快速幂）">
+<meta name="twitter:description" content="POJ 3070 解题报告 矩阵快速幂">
   
     <link rel="alternative" href="/atom.xml" title="HELLO, DCF" type="application/atom+xml">
   
@@ -183,11 +183,11 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-UVa-11582" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-POJ-3070" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/08/13/UVa-11582/" class="article-date">
-  	<time datetime="2015-08-12T17:31:11.000Z" itemprop="datePublished">2015-08-13</time>
+      <a href="/2015/08/29/POJ-3070/" class="article-date">
+  	<time datetime="2015-08-28T16:03:51.000Z" itemprop="datePublished">2015-08-29</time>
 </a>
     </div>
   
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      UVa-11582 （数论）
+      POJ-3070 （矩阵快速幂）
     </h1>
   
 
@@ -235,19 +235,10 @@ var _hmt = _hmt || [];
   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">1.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
   </div>
 
-        <p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=850&amp;page=show_problem&amp;problem=2629" target="_blank" rel="external"><code>题目链接：UVa-11582</code></a></p>
-<h2 id="解题思路">解题思路</h2><p>因为所需的结果是取模的，所以可以在计算序列的时候直接计算取模后的序列，即让$f(i) = f(i)\ mod \ n$，因为n的取值范围是[1, 1000]，所以整个序列元素的取值最多也只有1000种情况。</p>
-<p>根据斐波那契数列的性质，可以知道，当$(\ f_i\ $ ,$\ f_{i+1}\ )$开始循环的时候，整个序列就开始循环，因此最多$n^2$时序列就开始循环，（就此题来说，在打表时发现，最长的序列也只在3000左右）。</p>
-<p>计算时，枚举n列出所有可能的序列，然后算出$f(a^b)$等于循环中的那一项就行。</p>
-<a id="more"></a>
-<p><code>注意事项</code></p>
-<blockquote>
-<ul>
-<li>当n=1时，整个序列为（0，0，$\dots$，0），当a=0时，结果都为0；</li>
-<li>计算$f(a^b)$处于序列那一项时，不能直接计算$a^b\ \%\ mod$，可能会溢出。可以计算$(a\%mod)^b\ \%\ mod$。</li>
-</ul>
-</blockquote>
-<h2 id="代码">代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;vector&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">5</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=<span class="number">1000</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ans[i].push_back(<span class="number">0</span>);</span><br><span class="line">        ans[i].push_back(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>; ; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = (ans[i][j-<span class="number">1</span>]+ans[i][j-<span class="number">2</span>]) % i;</span><br><span class="line">            <span class="keyword">if</span>(temp==<span class="number">1</span> &amp;&amp; ans[i][j-<span class="number">1</span>]==<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            ans[i].push_back(temp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pow_mod</span><span class="params">(ull a, ull b, <span class="keyword">int</span> n)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    ll re = pow_mod(a, b&gt;&gt;<span class="number">1</span>, n);</span><br><span class="line">    re = re * re % n;</span><br><span class="line">    <span class="keyword">if</span>(b&amp;<span class="number">1</span>) re = re * a % n;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> re;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    init();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> n, t;</span><br><span class="line">    ull a, b;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;n;</span><br><span class="line">        <span class="keyword">if</span>(a==<span class="number">0</span>||n==<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="number">0</span>&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> i = pow_mod(a%(ans[n].size()-<span class="number">1</span>), b, (ans[n].size()-<span class="number">1</span>));</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;ans[n][i]&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><a href="http://poj.org/problem?id=3070" target="_blank" rel="external">题目链接：POJ3070 - Fibonacci</a></p>
+<h2 id="解题思路">解题思路</h2><p>给了一种新的斐波那契数列的求解思路，需要对一个矩阵的连乘，可以类推数的快速幂来进行求解<br><a id="more"></a></p>
+<h2 id="代码">代码</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="title">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">10000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> matrix</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> data[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">    matrix <span class="keyword">operator</span>*(matrix &amp; rhs)</span><br><span class="line">    &#123;</span><br><span class="line">        matrix temp;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">2</span>; j++)</span><br><span class="line">                temp.data[i][j] = ( data[i][<span class="number">0</span>]*rhs.data[<span class="number">0</span>][j] </span><br><span class="line">                                  + data[i][<span class="number">1</span>]*rhs.data[<span class="number">1</span>][j] ) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    matrix re;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">2</span>; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">2</span>; j++) re.data[i][j] = (i==j);</span><br><span class="line">    matrix <span class="keyword">base</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">2</span>; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">2</span>; j++) <span class="keyword">base</span>.data[i][j] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">base</span>.data[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) re = re * <span class="keyword">base</span>;</span><br><span class="line">        <span class="keyword">base</span> = <span class="keyword">base</span> * <span class="keyword">base</span>;</span><br><span class="line">        n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> re.data[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;n &amp;&amp; n!=-<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;solve(n)&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -256,18 +247,18 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2015/08/15/POJ-3264/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/08/29/斐波那契数列的几种解法/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          POJ-3264 （线段树 基本操作）
+          斐波那契数列的几种解法
         
       </div>
     </a>
   
   
-    <a href="/2015/08/13/UVa-12169/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">UVa-12169 （数论）</div>
+    <a href="/2015/08/24/2014-ACM-ICPC-西安赛区网络赛-解题报告/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2014 ACM/ICPC 西安赛区网络赛 解题报告</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -296,7 +287,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="UVa-11582" data-title="UVa-11582 （数论）" data-url="http://yoursite.com/2015/08/13/UVa-11582/"></div>
+	<div class="ds-thread" data-thread-key="POJ-3070" data-title="POJ-3070 （矩阵快速幂）" data-url="http://yoursite.com/2015/08/29/POJ-3070/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

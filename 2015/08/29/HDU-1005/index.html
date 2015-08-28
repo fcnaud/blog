@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>POJ-2479 （最大连续子列和 动规） | HELLO, DCF</title>
+  <title>HDU-1005 （矩阵快速幂） | HELLO, DCF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="POJ-2479 （最大连续子列和 动规） poj-2479解题报告">
+  <meta name="description" content="HDU-1005 解题报告 矩阵快速幂">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ-2479 （最大连续子列和 动规）">
-<meta property="og:url" content="http://yoursite.com/2015/08/15/POJ-2479/index.html">
+<meta property="og:title" content="HDU-1005 （矩阵快速幂）">
+<meta property="og:url" content="http://yoursite.com/2015/08/29/HDU-1005/index.html">
 <meta property="og:site_name" content="HELLO, DCF">
-<meta property="og:description" content="POJ-2479 （最大连续子列和 动规） poj-2479解题报告">
+<meta property="og:description" content="HDU-1005 解题报告 矩阵快速幂">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POJ-2479 （最大连续子列和 动规）">
-<meta name="twitter:description" content="POJ-2479 （最大连续子列和 动规） poj-2479解题报告">
+<meta name="twitter:title" content="HDU-1005 （矩阵快速幂）">
+<meta name="twitter:description" content="HDU-1005 解题报告 矩阵快速幂">
   
     <link rel="alternative" href="/atom.xml" title="HELLO, DCF" type="application/atom+xml">
   
@@ -183,11 +183,11 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-POJ-2479" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-HDU-1005" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/08/15/POJ-2479/" class="article-date">
-  	<time datetime="2015-08-14T17:05:59.000Z" itemprop="datePublished">2015-08-15</time>
+      <a href="/2015/08/29/HDU-1005/" class="article-date">
+  	<time datetime="2015-08-28T16:26:11.000Z" itemprop="datePublished">2015-08-29</time>
 </a>
     </div>
   
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      POJ-2479 （最大连续子列和 动规）
+      HDU-1005 （矩阵快速幂）
     </h1>
   
 
@@ -232,14 +232,12 @@ var _hmt = _hmt || [];
            
            <div id="toc" class="toc-article">
            <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">1.</span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#最大连续子列和"><span class="toc-number">1.1.</span> <span class="toc-text">最大连续子列和</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
   </div>
 
-        <p><a href="http://poj.org/problem?id=2479" target="_blank" rel="external"><code>题目链接：poj2479 - Maxinum sum</code></a></p>
-<h2 id="思路">思路</h2><p>题目要求的是，两段不相交的连续子列，使其加和最大。基础问题就是最大连续子列和，只要分别求得正序和逆序的最大和，然后枚举一边中间点，就可以得到结果。</p>
-<a id="more"></a>
-<h3 id="最大连续子列和">最大连续子列和</h3><p>解法有多种，这里用一种比较简单的动规的方法。<br>令 $num[i]$ 表示序列中第 i 个数字， $F(i)$ 为以第 i 个数字结尾的序列中最大的和， 那么<br>$<br>\ F(1) = num[1] \\<br>\begin{cases}<br>\ F(i) = F(i-1) + num[i],\ \ \ \ F(i-1)&gt;0 \\<br>\ F(i) = num[i],\ \ \ \ F(i-1)&lt;=0<br>\end{cases}<br>$<br>根据题意，我们需要的 $F(i)$ 是第 i 个数字之前的连续子列和的最大值，我们需要从头到尾更新一次<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(int <span class="built_in">i</span>=<span class="number">2</span>; <span class="built_in">i</span>=n; <span class="built_in">i</span>++) f(<span class="built_in">i</span>) = max( f(<span class="built_in">i</span>), f(<span class="built_in">i</span>-<span class="number">2</span>) );</span><br></pre></td></tr></table></figure></p>
-<h2 id="代码">代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;algorithm&gt;</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">0x7ffffff</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> num[<span class="number">50010</span>], s[<span class="number">50010</span>], e[<span class="number">50010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t, n, maxsum, sum;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, num+i);</span><br><span class="line"></span><br><span class="line">        s[<span class="number">1</span>] = num[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i-<span class="number">1</span>]&gt;<span class="number">0</span>) s[i] = s[i-<span class="number">1</span>] + num[i];</span><br><span class="line">            <span class="keyword">else</span> s[i] = num[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n; i++) s[i] = max(s[i], s[i-<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">        e[n] = num[n];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n-<span class="number">1</span>; i&gt;=<span class="number">1</span>; i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(e[i+<span class="number">1</span>]&gt;<span class="number">0</span>) e[i] = e[i+<span class="number">1</span>] + num[i];</span><br><span class="line">            <span class="keyword">else</span> e[i] = num[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n-<span class="number">1</span>; i&gt;=<span class="number">1</span>; i--) e[i] = max(e[i+<span class="number">1</span>], e[i]);</span><br><span class="line">        </span><br><span class="line">        maxsum = -inf;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum = s[i] + e[i+<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(sum&gt;maxsum) maxsum = sum;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, maxsum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1005" target="_blank" rel="external"><code>题目链接: HDU1005 - Number Sequence</code></a></p>
+<h2 id="思路">思路</h2><p>类似斐波那契数列的推导式，但是所求 n 太大，所以用了矩阵快速幂（不了解矩阵快速幂的点<a href="/2015/08/29/斐波那契数列的几种解法/"><strong>我</strong></a> ）。<br>有人做好像是有周期可循的， 但还是矩阵快速幂来的简单暴力。<br><a id="more"></a></p>
+<h2 id="代码">代码</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#include &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#include &lt;cstdlib&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="title">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> martic</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> data[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">    martic <span class="keyword">operator</span>*(martic &amp; rhs)</span><br><span class="line">    &#123;</span><br><span class="line">        martic temp;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">2</span>; j++)</span><br><span class="line">                temp.data[i][j] = ( data[i][<span class="number">0</span>]*rhs.data[<span class="number">0</span>][j]</span><br><span class="line">                                  + data[i][<span class="number">1</span>]*rhs.data[<span class="number">1</span>][j] ) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> n)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">3</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    n -= <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    martic re;</span><br><span class="line">    re.data[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    re.data[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    re.data[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    re.data[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    martic <span class="keyword">base</span>;</span><br><span class="line">    <span class="keyword">base</span>.data[<span class="number">0</span>][<span class="number">0</span>] = a;</span><br><span class="line">    <span class="keyword">base</span>.data[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">base</span>.data[<span class="number">1</span>][<span class="number">0</span>] = b;</span><br><span class="line">    <span class="keyword">base</span>.data[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>( n&amp;<span class="number">1</span> ) re = re * <span class="keyword">base</span>;</span><br><span class="line">        <span class="keyword">base</span> = <span class="keyword">base</span> * <span class="keyword">base</span>;</span><br><span class="line">        n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (re.data[<span class="number">0</span>][<span class="number">0</span>] + re.data[<span class="number">1</span>][<span class="number">0</span>]) % mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b, n;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">"%d%d%d"</span>, &amp;a, &amp;b, &amp;n) &amp;&amp; a)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(<span class="string">"%d\n"</span>, solve(a%mod, b%mod, n));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -249,18 +247,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2015/08/16/HDU-1166/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          HDU-1166 （线段树 基本操作）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/08/15/POJ-2709/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">POJ-2709 （贪心）</div>
+    <a href="/2015/08/29/HDU-1003/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HDU-1003 （最大连续子串和）</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -289,7 +278,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="POJ-2479" data-title="POJ-2479 （最大连续子列和 动规）" data-url="http://yoursite.com/2015/08/15/POJ-2479/"></div>
+	<div class="ds-thread" data-thread-key="HDU-1005" data-title="HDU-1005 （矩阵快速幂）" data-url="http://yoursite.com/2015/08/29/HDU-1005/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
