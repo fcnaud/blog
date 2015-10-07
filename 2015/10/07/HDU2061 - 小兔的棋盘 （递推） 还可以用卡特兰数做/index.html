@@ -3,32 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>HELLO, DCF</title>
+  <title>HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做 | HELLO, DCF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做标签（空格分隔）： HDU 刷题
-
-题目链接
-[toc]
-思路一道递推题（或者说有点DP的感觉）。看网上有人说是卡特兰数，不过对那个不是很熟悉，也就没有用。
-代码12345678910111213141516171819202122232425262728#include &amp;lt;cstdio&amp;gt;using namespace std">
+  <meta name="description" content="题目链接
+思路一道递推题（或者说有点DP的感觉）。看网上有人说是卡特兰数，不过对那个不是很熟悉，也就没有用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HELLO, DCF">
+<meta property="og:title" content="HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做">
 <meta property="og:url" content="http:/2015/10/07/HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做/index.html">
 <meta property="og:site_name" content="HELLO, DCF">
-<meta property="og:description" content="HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做标签（空格分隔）： HDU 刷题
-
-题目链接
-[toc]
-思路一道递推题（或者说有点DP的感觉）。看网上有人说是卡特兰数，不过对那个不是很熟悉，也就没有用。
-代码12345678910111213141516171819202122232425262728#include &amp;lt;cstdio&amp;gt;using namespace std">
+<meta property="og:description" content="题目链接
+思路一道递推题（或者说有点DP的感觉）。看网上有人说是卡特兰数，不过对那个不是很熟悉，也就没有用。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HELLO, DCF">
-<meta name="twitter:description" content="HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做标签（空格分隔）： HDU 刷题
-
-题目链接
-[toc]
-思路一道递推题（或者说有点DP的感觉）。看网上有人说是卡特兰数，不过对那个不是很熟悉，也就没有用。
-代码12345678910111213141516171819202122232425262728#include &amp;lt;cstdio&amp;gt;using namespace std">
+<meta name="twitter:title" content="HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做">
+<meta name="twitter:description" content="题目链接
+思路一道递推题（或者说有点DP的感觉）。看网上有人说是卡特兰数，不过对那个不是很熟悉，也就没有用。">
   
     <link rel="alternative" href="/atom.xml" title="HELLO, DCF" type="application/atom+xml">
   
@@ -202,7 +190,7 @@ var _hmt = _hmt || [];
   
     <div class="article-meta">
       <a href="/2015/10/07/HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做/" class="article-date">
-  	<time datetime="2015-10-07T14:24:31.544Z" itemprop="datePublished">2015-10-07</time>
+  	<time datetime="2015-10-07T14:35:31.683Z" itemprop="datePublished">2015-10-07</time>
 </a>
     </div>
   
@@ -213,6 +201,29 @@ var _hmt = _hmt || [];
     
 
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/HDU/">HDU</a>
+	</div>
+
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
 
 
@@ -220,15 +231,12 @@ var _hmt = _hmt || [];
            
            <div id="toc" class="toc-article">
            <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HDU2061_-_小兔的棋盘_（递推）_还可以用卡特兰数做"><span class="toc-number">1.</span> <span class="toc-text">HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.0.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.0.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
   </div>
 
-        <h1 id="HDU2061_-_小兔的棋盘_（递推）_还可以用卡特兰数做">HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做</h1><p>标签（空格分隔）： HDU 刷题</p>
-<hr>
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2067" target="_blank" rel="external">题目链接</a></p>
-<p>[toc]</p>
-<h3 id="思路">思路</h3><p>一道递推题（或者说有点DP的感觉）。<br>看网上有人说是卡特兰数，不过对那个不是很熟悉，也就没有用。</p>
-<h3 id="代码">代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line">LL sta[<span class="number">40</span>][<span class="number">40</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    sta[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=<span class="number">35</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;=i; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 状态转移</span></span><br><span class="line">            <span class="keyword">if</span>(j==<span class="number">0</span>) sta[i][j] = sta[i-<span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(j==i) sta[i][j] = sta[i][j-<span class="number">1</span>]；</span><br><span class="line">            <span class="keyword">else</span> sta[i][j] = (sta[i-<span class="number">1</span>][j]+sta[i][j-<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> num, tt=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;num) &amp;&amp; num!=-<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d %I64d\n"</span>, tt++, num, sta[num][num]*<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2067" target="_blank" rel="external">题目链接</a></p>
+<h2 id="思路">思路</h2><p>一道递推题（或者说有点DP的感觉）。<br>看网上有人说是卡特兰数，不过对那个不是很熟悉，也就没有用。<br><a id="more"></a></p>
+<h2 id="代码">代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line">LL sta[<span class="number">40</span>][<span class="number">40</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    sta[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=<span class="number">35</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;=i; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 状态转移</span></span><br><span class="line">            <span class="keyword">if</span>(j==<span class="number">0</span>) sta[i][j] = sta[i-<span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(j==i) sta[i][j] = sta[i][j-<span class="number">1</span>]；</span><br><span class="line">            <span class="keyword">else</span> sta[i][j] = (sta[i-<span class="number">1</span>][j]+sta[i][j-<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> num, tt=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;num) &amp;&amp; num!=-<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d %I64d\n"</span>, tt++, num, sta[num][num]*<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -238,9 +246,18 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
+    <a href="/2015/10/07/HDU5427 - A problem of sorting （简单题）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          HDU5427 - A problem of sorting （简单题）
+        
+      </div>
+    </a>
   
-    <a href="/2015/10/07/HDU5427 - A problem of sorting （简单题）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+  
+    <a href="/2015/10/07/HDU5444 - Elven Postman （树的遍历）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HDU5444 - Elven Postman （树的遍历）</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -269,7 +286,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做" data-title="" data-url="http:/2015/10/07/HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做/"></div>
+	<div class="ds-thread" data-thread-key="HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做" data-title="HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做" data-url="http:/2015/10/07/HDU2061 - 小兔的棋盘 （递推） 还可以用卡特兰数做/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

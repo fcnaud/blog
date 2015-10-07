@@ -3,26 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>HELLO, DCF</title>
+  <title>HDU5437 - Alisha’s Party （优先队列 模拟） | HELLO, DCF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HDU5437 - Alisha’s Party （优先队列 模拟）标签（空格分隔）： HDU 刷题
-
-题目链接
-思路按照题目要求，利用优先队列进行模拟。需要注意的就是可能有多个数据是同一时间，按照能进入的最大人数计算，不能累加，所有操作完成后，剩下的人还要按照礼物大小来依次全部进入。刚开始做的时候，觉得直接用优先队列，可能会超时，还自己写了一个二叉堆，不过提交时发现并没有什么改善，估计是自己写的">
+  <meta name="description" content="题目链接
+思路按照题目要求，利用优先队列进行模拟。需要注意的就是可能有多个数据是同一时间，按照能进入的最大人数计算，不能累加，所有操作完成后，剩下的人还要按照礼物大小来依次全部进入。刚开始做的时候，觉得直接用优先队列，可能会超时，还自己写了一个二叉堆，不过提交时发现并没有什么改善，估计是自己写的太烂了，还不如直接用C++里边的……">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HELLO, DCF">
+<meta property="og:title" content="HDU5437 - Alisha’s Party （优先队列 模拟）">
 <meta property="og:url" content="http:/2015/10/07/HDU5437 - Alisha’s Party （优先队列 模拟）/index.html">
 <meta property="og:site_name" content="HELLO, DCF">
-<meta property="og:description" content="HDU5437 - Alisha’s Party （优先队列 模拟）标签（空格分隔）： HDU 刷题
-
-题目链接
-思路按照题目要求，利用优先队列进行模拟。需要注意的就是可能有多个数据是同一时间，按照能进入的最大人数计算，不能累加，所有操作完成后，剩下的人还要按照礼物大小来依次全部进入。刚开始做的时候，觉得直接用优先队列，可能会超时，还自己写了一个二叉堆，不过提交时发现并没有什么改善，估计是自己写的">
+<meta property="og:description" content="题目链接
+思路按照题目要求，利用优先队列进行模拟。需要注意的就是可能有多个数据是同一时间，按照能进入的最大人数计算，不能累加，所有操作完成后，剩下的人还要按照礼物大小来依次全部进入。刚开始做的时候，觉得直接用优先队列，可能会超时，还自己写了一个二叉堆，不过提交时发现并没有什么改善，估计是自己写的太烂了，还不如直接用C++里边的……">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HELLO, DCF">
-<meta name="twitter:description" content="HDU5437 - Alisha’s Party （优先队列 模拟）标签（空格分隔）： HDU 刷题
-
-题目链接
-思路按照题目要求，利用优先队列进行模拟。需要注意的就是可能有多个数据是同一时间，按照能进入的最大人数计算，不能累加，所有操作完成后，剩下的人还要按照礼物大小来依次全部进入。刚开始做的时候，觉得直接用优先队列，可能会超时，还自己写了一个二叉堆，不过提交时发现并没有什么改善，估计是自己写的">
+<meta name="twitter:title" content="HDU5437 - Alisha’s Party （优先队列 模拟）">
+<meta name="twitter:description" content="题目链接
+思路按照题目要求，利用优先队列进行模拟。需要注意的就是可能有多个数据是同一时间，按照能进入的最大人数计算，不能累加，所有操作完成后，剩下的人还要按照礼物大小来依次全部进入。刚开始做的时候，觉得直接用优先队列，可能会超时，还自己写了一个二叉堆，不过提交时发现并没有什么改善，估计是自己写的太烂了，还不如直接用C++里边的……">
   
     <link rel="alternative" href="/atom.xml" title="HELLO, DCF" type="application/atom+xml">
   
@@ -196,7 +190,7 @@ var _hmt = _hmt || [];
   
     <div class="article-meta">
       <a href="/2015/10/07/HDU5437 - Alisha’s Party （优先队列 模拟）/" class="article-date">
-  	<time datetime="2015-10-07T14:24:10.474Z" itemprop="datePublished">2015-10-07</time>
+  	<time datetime="2015-10-07T14:35:16.765Z" itemprop="datePublished">2015-10-07</time>
 </a>
     </div>
   
@@ -207,6 +201,29 @@ var _hmt = _hmt || [];
     
 
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HDU5437 - Alisha’s Party （优先队列 模拟）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/HDU/">HDU</a>
+	</div>
+
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
 
 
@@ -214,14 +231,12 @@ var _hmt = _hmt || [];
            
            <div id="toc" class="toc-article">
            <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HDU5437_-_Alisha’s_Party_（优先队列_模拟）"><span class="toc-number">1.</span> <span class="toc-text">HDU5437 - Alisha’s Party （优先队列 模拟）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.0.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.0.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
   </div>
 
-        <h1 id="HDU5437_-_Alisha’s_Party_（优先队列_模拟）">HDU5437 - Alisha’s Party （优先队列 模拟）</h1><p>标签（空格分隔）： HDU 刷题</p>
-<hr>
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5437" target="_blank" rel="external">题目链接</a></p>
-<h3 id="思路">思路</h3><p>按照题目要求，利用优先队列进行模拟。需要注意的就是可能有多个数据是同一时间，按照能进入的最大人数计算，不能累加，所有操作完成后，剩下的人还要按照礼物大小来依次全部进入。<br>刚开始做的时候，觉得直接用优先队列，可能会超时，还自己写了一个二叉堆，不过提交时发现并没有什么改善，估计是自己写的太烂了，还不如直接用C++里边的……</p>
-<h3 id="代码">代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstring&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;vector&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;queue&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> node</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">210</span>];</span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">&#125;fri[<span class="number">150100</span>];</span><br><span class="line"><span class="keyword">int</span> ans[<span class="number">150100</span>];</span><br><span class="line"><span class="keyword">int</span> que[<span class="number">150100</span>];</span><br><span class="line"><span class="keyword">struct</span> cmp</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(fri[i].value==fri[j].value)</span><br><span class="line">            <span class="keyword">return</span> i&gt;j;</span><br><span class="line">        <span class="keyword">return</span> fri[i].value&lt;fri[j].value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t, n, m, q;</span><br><span class="line">    <span class="keyword">int</span> cur, nCount, re;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;q);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%s%d"</span>, fri[i].name, &amp;fri[i].value);</span><br><span class="line">        <span class="built_in">memset</span>(que, <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>)*(n+<span class="number">1</span>));</span><br><span class="line">        <span class="keyword">int</span> index, peo;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;index, &amp;peo);</span><br><span class="line">            que[index] = max(que[index], peo);</span><br><span class="line">        &#125;</span><br><span class="line">        cur = <span class="number">1</span>;</span><br><span class="line">        nCount = <span class="number">0</span>;</span><br><span class="line">        priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, cmp&gt; qu;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(que[i]&gt;<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(; cur&lt;=i&amp;&amp;cur&lt;=n; cur++)</span><br><span class="line">                &#123;</span><br><span class="line">                    qu.push(cur);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;que[i]&amp;&amp;!qu.empty(); j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    ans[++nCount] = qu.top();</span><br><span class="line">                    qu.pop();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cur&gt;n) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(;cur&lt;=n; cur++) qu.push(cur);</span><br><span class="line">        <span class="keyword">while</span>(!qu.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            ans[++nCount] = qu.top();</span><br><span class="line">            qu.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=q; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;re);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%s%c"</span>, fri[ans[re]].name, <span class="string">" \n"</span>[i==q]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5437" target="_blank" rel="external">题目链接</a></p>
+<h2 id="思路">思路</h2><p>按照题目要求，利用优先队列进行模拟。需要注意的就是可能有多个数据是同一时间，按照能进入的最大人数计算，不能累加，所有操作完成后，剩下的人还要按照礼物大小来依次全部进入。<br>刚开始做的时候，觉得直接用优先队列，可能会超时，还自己写了一个二叉堆，不过提交时发现并没有什么改善，估计是自己写的太烂了，还不如直接用C++里边的……<br><a id="more"></a></p>
+<h2 id="代码">代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;iostream&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstring&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;cstdio&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;vector&gt;</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;queue&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> node</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">210</span>];</span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">&#125;fri[<span class="number">150100</span>];</span><br><span class="line"><span class="keyword">int</span> ans[<span class="number">150100</span>];</span><br><span class="line"><span class="keyword">int</span> que[<span class="number">150100</span>];</span><br><span class="line"><span class="keyword">struct</span> cmp</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(fri[i].value==fri[j].value)</span><br><span class="line">            <span class="keyword">return</span> i&gt;j;</span><br><span class="line">        <span class="keyword">return</span> fri[i].value&lt;fri[j].value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t, n, m, q;</span><br><span class="line">    <span class="keyword">int</span> cur, nCount, re;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;q);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%s%d"</span>, fri[i].name, &amp;fri[i].value);</span><br><span class="line">        <span class="built_in">memset</span>(que, <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>)*(n+<span class="number">1</span>));</span><br><span class="line">        <span class="keyword">int</span> index, peo;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;index, &amp;peo);</span><br><span class="line">            que[index] = max(que[index], peo);</span><br><span class="line">        &#125;</span><br><span class="line">        cur = <span class="number">1</span>;</span><br><span class="line">        nCount = <span class="number">0</span>;</span><br><span class="line">        priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, cmp&gt; qu;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(que[i]&gt;<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(; cur&lt;=i&amp;&amp;cur&lt;=n; cur++)</span><br><span class="line">                &#123;</span><br><span class="line">                    qu.push(cur);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;que[i]&amp;&amp;!qu.empty(); j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    ans[++nCount] = qu.top();</span><br><span class="line">                    qu.pop();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cur&gt;n) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(;cur&lt;=n; cur++) qu.push(cur);</span><br><span class="line">        <span class="keyword">while</span>(!qu.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            ans[++nCount] = qu.top();</span><br><span class="line">            qu.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=q; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;re);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%s%c"</span>, fri[ans[re]].name, <span class="string">" \n"</span>[i==q]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -231,18 +246,18 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2015/10/07/HDU5428 - The Factor （因式分解）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/10/07/HDU5443 - The Water Problem （线段树）/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          (no title)
+          HDU5443 - The Water Problem （线段树）
         
       </div>
     </a>
   
   
-    <a href="/2015/10/07/HDU5443 - The Water Problem （线段树）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2015/08/29/HDU-1005/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HDU-1005 （矩阵快速幂）</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -271,7 +286,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="HDU5437 - Alisha’s Party （优先队列 模拟）" data-title="" data-url="http:/2015/10/07/HDU5437 - Alisha’s Party （优先队列 模拟）/"></div>
+	<div class="ds-thread" data-thread-key="HDU5437 - Alisha’s Party （优先队列 模拟）" data-title="HDU5437 - Alisha’s Party （优先队列 模拟）" data-url="http:/2015/10/07/HDU5437 - Alisha’s Party （优先队列 模拟）/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
