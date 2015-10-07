@@ -185,6 +185,430 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2014-ACM-ICPC-西安赛区网络赛-解题报告" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/24/2014-ACM-ICPC-西安赛区网络赛-解题报告/" class="article-date">
+  	<time datetime="2015-08-23T16:12:39.000Z" itemprop="datePublished">2015-08-24</time>
+</a>
+    </div>
+  
+
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/24/2014-ACM-ICPC-西安赛区网络赛-解题报告/">2014 ACM/ICPC 西安赛区网络赛 解题报告</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+
+
+      
+        <h2 id="思路">思路</h2><h3 id="A_-_Post_Robot">A - Post Robot</h3><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5007"><code>题目链接：hdu - 5007</code></a><br>水题，怎么做都可以<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/解题报告/">解题报告</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/ACM/">ACM</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/08/24/2014-ACM-ICPC-西安赛区网络赛-解题报告/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-POJ-2777" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/20/POJ-2777/" class="article-date">
+  	<time datetime="2015-08-19T17:09:03.000Z" itemprop="datePublished">2015-08-20</time>
+</a>
+    </div>
+  
+
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/20/POJ-2777/">POJ-2777 （线段树 区间更新）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+
+
+      
+        <p><a href="http://poj.org/problem?id=2777"><code>题目链接：POJ2777 - Count Color</code></a></p>
+<h2 id="解题思路">解题思路</h2><p>这道题看上去是一道普通的区间更新问题，但入手还是挺多坑的。</p>
+<p>因为所要查询的是给定区间内不同颜色的个数，这就需要在每一层节点都要保存该区间的涂色情况，如果仅仅记录个数，是无法在较上一层进行汇总的，如果在每一个节点都用数组进行存储，那么对空间和运算时间都是很消耗的。</p>
+<p>所幸颜色种类比较少，所以我们可以像函数中的标志参数那样，用不同位上的 1 来表示不同的颜色，（即 1 表示 1，10 表示 2，100 表示 3，1000 表示 4……）将两个数按位或起来，就可以将信息进行汇总，30 种颜色，用 int 就可以存下来。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/解题报告/">解题报告</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/ACM/">ACM</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/08/20/POJ-2777/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-POJ-3468" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/19/POJ-3468/" class="article-date">
+  	<time datetime="2015-08-18T17:24:00.000Z" itemprop="datePublished">2015-08-19</time>
+</a>
+    </div>
+  
+
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/19/POJ-3468/">POJ-3468 （线段树 区间更新）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+
+
+      
+        <p><a href="http://poj.org/problem?id=3468"><code>题目链接：poj3468 - A Simple Problem with Integers</code></a></p>
+<h2 id="思路">思路</h2><blockquote>
+<p>线段树的应用，<strong>区间更新</strong> 和 <strong>区间查询</strong>，比较困难的就是区间更新了。</p>
+</blockquote>
+<h3 id="面对的问题">面对的问题</h3><p>线段树之所以能够快速进行区间操作，是因为它的每一个区间分解得到的终止区间都是 $O(\log n )$ 级别的，但是如果每一次区间更新都将操作进行到叶子节点，那么操作就会达到 $O(n\log n)$级别。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/解题报告/">解题报告</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/ACM/">ACM</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/08/19/POJ-3468/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-HDU-1166" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/16/HDU-1166/" class="article-date">
+  	<time datetime="2015-08-15T16:40:44.000Z" itemprop="datePublished">2015-08-16</time>
+</a>
+    </div>
+  
+
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/16/HDU-1166/">HDU-1166 （线段树 基本操作）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+
+
+      
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1166"><code>题目链接：HDU1166 - 敌兵布阵</code></a></p>
+<h2 id="思路">思路</h2><p>线段树的基本应用，单点更新和区间查询</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/解题报告/">解题报告</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/ACM/">ACM</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/08/16/HDU-1166/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-POJ-2479" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/15/POJ-2479/" class="article-date">
+  	<time datetime="2015-08-14T17:05:59.000Z" itemprop="datePublished">2015-08-15</time>
+</a>
+    </div>
+  
+
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/15/POJ-2479/">POJ-2479 （最大连续子列和 动规）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+
+
+      
+        <p><a href="http://poj.org/problem?id=2479"><code>题目链接：poj2479 - Maxinum sum</code></a></p>
+<h2 id="思路">思路</h2><p>题目要求的是，两段不相交的连续子列，使其加和最大。基础问题就是最大连续子列和，只要分别求得正序和逆序的最大和，然后枚举一边中间点，就可以得到结果。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/解题报告/">解题报告</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/ACM/">ACM</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/08/15/POJ-2479/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-POJ-2709" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/15/POJ-2709/" class="article-date">
+  	<time datetime="2015-08-14T17:05:45.000Z" itemprop="datePublished">2015-08-15</time>
+</a>
+    </div>
+  
+
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/15/POJ-2709/">POJ-2709 （贪心）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+
+
+      
+        <p><a href="http://poj.org/problem?id=2709"><code>题目链接：poj2709 - Painter</code></a></p>
+<h2 id="思路">思路</h2><p>由于需要尽可能少的购买套餐，所以就要避免浪费。每种颜色的数量是不同的，为了避免某一种颜色剩余的过多，也就是有一些颜色会过早被用光，所以在每次取颜料来配置灰色时（利用 <strong>贪心</strong> 的思想），都要在剩余量最多的几种颜料中来取。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/解题报告/">解题报告</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/ACM/">ACM</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/08/15/POJ-2709/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-POJ-3264" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -475,290 +899,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-拓扑排序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/05/18/拓扑排序/" class="article-date">
-  	<time datetime="2015-05-18T15:39:58.000Z" itemprop="datePublished">2015-05-18</time>
-</a>
-    </div>
-  
-
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/18/拓扑排序/">拓扑排序</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-
-
-      
-        <h2 id="问题的引入：">问题的引入：</h2><p>现实生活中的事物往往有一些相互的依赖关系，比较常见的就是选课，尤其是专业课的开设，往往都是有预修课程的，而且这些关系往往都是“硬”关系，所以这些课程的排课顺序就成为了一个难题。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图论/">图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/拓扑排序/">拓扑排序</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/ACM/">ACM</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/05/18/拓扑排序/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-最长公共子序列" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/05/11/最长公共子序列/" class="article-date">
-  	<time datetime="2015-05-11T06:24:33.000Z" itemprop="datePublished">2015-05-11</time>
-</a>
-    </div>
-  
-
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/11/最长公共子序列/">最长公共子序列</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-
-
-      
-        <h2 id="定义">定义</h2><p><code>子序列的定义</code>：从给定序列中抽取一定量的元素，不改变其原先的顺序，满足这个条件的都称为给定序列的子序列。<br><code>最长公共子序列</code>：在给定的两个序列的所有相同子序列中，最长的那个子序列，通常不止为1。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/">ACM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动规/">动规</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/ACM/">ACM</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/05/11/最长公共子序列/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-sizeof" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/05/10/sizeof/" class="article-date">
-  	<time datetime="2015-05-09T17:29:06.000Z" itemprop="datePublished">2015-05-10</time>
-</a>
-    </div>
-  
-
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/10/sizeof/">sizeof</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-
-
-      
-           
-           <div id="toc" class="toc-article">
-           <strong class="toc-title">文章目录</strong>
-  
-  </div>
-
-        <p>当sizeof被用来计算类或结构体的时候，计算的是类或结构体中非静态变量所拥有的内存。<br>例如，<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span>(s) &lt;&lt;endl; <span class="comment">// 4</span></span><br></pre></td></tr></table></figure></p>
-<p>由于c++中的string实现的时候，只有指向所保存数据的char*是非静态的，所以计算所得的就只有4。(其实，串这一数据结构中，他的属性中还应该有一个长度，但是c++中的string在实现的时候，将长度放在了char* 所指向的区域中的前4个字节中了)。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/库函数/">库函数</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/编程随笔/">编程随笔</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-0-1背包" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/05/09/0-1背包/" class="article-date">
-  	<time datetime="2015-05-09T06:03:22.000Z" itemprop="datePublished">2015-05-09</time>
-</a>
-    </div>
-  
-
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/09/0-1背包/">0-1背包</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-
-
-      
-        <h2 id="问题引入">问题引入</h2><p>背包是一类典型的动规问题，0-1背包是其中的一种，也是最基本的一种。<br>之所以叫做 0-1背包是因为，这类问题中的每一件物体只有一件，放入背包与不放就构成了它的两种状态，0 代表不放，1 代表放入。</p>
-<p>将这类问题总结一下就是：<br>存在 N 件物品，每一见物品有两个属性，重量 w 和价值 v，有一个背包，具有重量限制wl， 求所能装入的最大价值。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/背包/">背包</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/ACM/">ACM</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/05/09/0-1背包/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
