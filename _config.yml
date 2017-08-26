@@ -1,0 +1,23 @@
+
+title: dcf's blog
+tagline: 蛋炒饭是什么鬼
+email: dcf_xyz@outlook.com
+description: 
+  哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈嗝
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  dcfxyz
+
+author:
+  name: fcnaud
+  url: 
+  email: dcf_xyz@outlook.com
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+paginate: 10
