@@ -1,0 +1,17 @@
+---
+layout: page
+title: Category
+permalink: /categories/
+---
+
+{% for category in site.categories %}
+<h2>
+  {{ category | first }}
+</h2>
+<small> {{ category | last | size }} posts </small>
+<ul class="arc-list">
+    {% for post in category.last %}
+        <li>{{ post.date | date:"%d/%m/%Y"}}<a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endfor %}
