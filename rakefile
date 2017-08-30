@@ -1,0 +1,30 @@
+namespace :post do 
+  task :create, [:title] do |t, args|
+    if args[:title]
+      title = args[:title].split(' ').join('-')
+      time = Time.now
+      file_name = "#{time.year}-#{time.month}-#{time.day}-#{title}.md"
+      if File.exists?(file_name)
+        puts "file exist"
+      else
+        File.open("_posts/#{file_name}", 'w') do |file|
+          str = "---\n"
+          str+= "layout: post\n"
+          str+= "title: \n"
+          str+= "date: #{time.to_s}\n"
+          str+= "---\n"
+          file.puts str
+        end
+      end
+    else
+      puts 'usage like this'
+      puts %Q(rake "post:create[post_name]")
+    end
+  end
+
+  task :push_post do 
+    `git add _posts/*`
+    `git commit -m "add post"`
+    `git push origin master`
+  end
+end
