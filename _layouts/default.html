@@ -2,7 +2,6 @@
 <html lang="en-us">
 
   {% include head.html %}
-  {% include comments.html %}
 
   <body>
 
@@ -24,7 +23,7 @@
         {{ content }}
 
         {% if site.valine_comment.enable %}
-        <div id="comments"></div>
+        {% include comments.html %}
         {% endif %}
       </div>
     </div>
