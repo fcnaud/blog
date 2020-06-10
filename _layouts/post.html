@@ -44,3 +44,7 @@ layout: default
     </a>
     除非特别声明，作品均采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
 </div>
+
+{% if site.valine_comment.enable %}
+{% include comments.html %}
+{% endif %}
